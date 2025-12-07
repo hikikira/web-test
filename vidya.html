@@ -1,0 +1,587 @@
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bunnykira's site</title> 
+<meta charset="UTF-8">
+
+</head>
+<body onload="setInterval(step,100)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    @font-face {
+  font-family: 'PC98';
+  src:url("fonts/pc-9800.ttf");
+}
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/02/42/91/34/360_F_242913405_1UfOVGAe6ZkFvYNlfDn6AiNZ08m7IuK9.jpg');
+            font-family: 'PC98';
+            color: #5e5e5e;
+            font-size: 1em;
+            line-height: 19px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+
+
+::-webkit-scrollbar {
+width: 14px;
+height: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+background: linear-gradient(90deg, rgba(238,238,238,1) 38%, rgba(206,206,206,1) 62%);
+border: 1.5px solid #888888;
+border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+background: linear-gradient(90deg, rgba(230,230,230,1) 6%, rgba(240,240,240,1) 18%);
+}
+
+::-webkit-scrollbar-button {
+display: block;
+width: 14px;
+height: 16px;
+}
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+background: white;
+background-image: url("https://dl.dropbox.com/s/vtnpkuealr2f7u4/whc8iy3_d.png");
+border: 1.5px solid #888888;
+border-radius: 5px;
+}
+
+::-webkit-scrollbar-button:vertical:start:increment {
+display: none;
+}
+
+::-webkit-scrollbar-button:vertical:end:decrement {
+display: none;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+background: white;
+background-image: url("https://image.tmdb.org/t/p/original/2JuoRiYI9K1AitWMYL2XJdzzN0L.jpg");
+border: 1.5px solid #888888;
+}
+        #TEMPLATE-LAYOUT {
+            width: 940px;
+            height: auto;
+            padding: 5px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        header {
+            width: 100%;
+            height: 110px;
+            background-image: url('https://i.pinimg.com/736x/a2/8d/95/a28d95c57519f9312bbb334ed2d71e2e.jpg');
+            background-size: 960px 150px;-size: contain;
+            border-width: 2px;
+            border-style: ridge;
+            border-color: #dda0dd;
+            
+            overflow: hidden;
+            font-family: 'PC98';
+
+        }
+
+        .shadow {
+            text-shadow: rgb(255, 255, 255) 4px 0px 0px, rgb(255, 255, 255) 3.87565px 0.989616px 0px, rgb(255, 255, 255) 3.51033px 1.9177px 0px, rgb(255, 255, 255) 2.92676px 2.72656px 0px, rgb(255, 255, 255) 2.16121px 3.36588px 0px, rgb(255, 255, 255) 1.26129px 3.79594px 0px, rgb(255, 255, 255) 0.282949px 3.98998px 0px, rgb(255, 255, 255) -0.712984px 3.93594px 0px, rgb(255, 255, 255) -1.66459px 3.63719px 0px, rgb(255, 255, 255) -2.51269px 3.11229px 0px, rgb(255, 255, 255) -3.20457px 2.39389px 0px, rgb(255, 255, 255) -3.69721px 1.52664px 0px, rgb(255, 255, 255) -3.95997px 0.56448px 0px, rgb(255, 255, 255) -3.97652px -0.432781px 0px, rgb(255, 255, 255) -3.74583px -1.40313px 0px, rgb(255, 255, 255) -3.28224px -2.28625px 0px, rgb(255, 255, 255) -2.61457px -3.02721px 0px, rgb(255, 255, 255) -1.78435px -3.57996px 0px, rgb(255, 255, 255) -0.843183px -3.91012px 0px, rgb(255, 255, 255) 0.150409px -3.99717px 0px, rgb(255, 255, 255) 1.13465px -3.8357px 0px, rgb(255, 255, 255) 2.04834px -3.43574px 0px, rgb(255, 255, 255) 2.83468px -2.82216px 0px, rgb(255, 255, 255) 3.44477px -2.03312px 0px, rgb(255, 255, 255) 3.84068px -1.11766px 0px, rgb(255, 255, 255) 3.9978px -0.132717px 0px;
+        }
+
+        .BOARD {
+            width: 0%;
+            height: 0px;
+            border-width: 0px;
+            border-style: ridge;
+            border-color: #dda0dd;
+            padding: 0px;
+            box-sizing: border-box;
+            border-right: 0px;
+        }
+
+        .BOARD p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .marquee-box-top {
+            width: 100%;
+            height: 25px;
+            padding: 1px;
+            border-width: 2px;
+            border-style: ridge;
+            border-color: #dda0dd;
+            margin-top: 5px;
+            background: white;
+        }
+                .marquee-box-bottom {
+            width: 100%;
+            height: 50px;
+            padding: 1px;
+            border-width: 2px;
+            border-style: ridge;
+            border-color: #dda0dd;
+            margin-top: 5px;
+            background: white;
+        }
+
+        .navigation, .left-navigation {
+            width: 200px;
+            height: 220px;
+            border-width: 2px;
+            border-style: ridge;
+            border-color: #dda0dd;
+            margin-top: 5px;
+            background: white;
+            overflow: hidden;
+            position: relative;
+            border-width:7px;
+            border-style:solid;
+            border-image: url("https://i.imgur.com/NJa4bp2.png") 8 fill round;
+        }
+
+        .button {
+            width: auto;
+            height: auto;
+            font-size: 20px;
+            padding: 5px;
+            text-align: center;
+            border-bottom: 3px ridge #dda0dd;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 3.5px;
+            margin: 0px;
+        }
+
+        .content {
+            width: 100%;
+            height: 340px;
+            border-width: 2px;
+            border-style: ridge;
+            border-color: #dda0dd;
+            margin-top: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            border-width: 2px;
+            border-style: ridge;
+            border-color: #dda0dd;
+            background: white;
+            padding: 5px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+       .linkz {
+           width: 100%;
+  height: 100%;
+  border: 2px ridge #dda0dd;
+  background: url(https://i.pinimg.com/736x/23/32/7b/23327b07b114c7a62e5346ffca52691e.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+        .container p {
+            margin: 0px;
+            padding: 0px;
+            margin-top: 5px;
+        }
+
+        .the-section {
+           top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0; /* Remove any default margins */
+  padding: 0; 
+        }
+
+        .box-left, .box-right {
+            width: 49.4%;
+            padding: 5px;
+            box-sizing: border-box;
+            border-style: ridge;
+            border-color: #dda0dd;
+            background: white;
+            margin-top: 5px;
+            height: 265px;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        .box-left .button, .box-right .button {
+          padding: 2px 5px; /* Smaller padding for thinner header */
+        }
+        .box-left {
+            background-image: url('https://files.catbox.moe/zmmapw.gif');
+        }
+
+        .box-right {
+            background-image: url('https://files.catbox.moe/nd8imm.gif');
+            margin-left: 5px;
+        }
+
+        .box-left .button, .box-right .button {
+            margin: -5px;
+        }
+        
+        @keyframes rainbowText {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+@keyframes rainbow-scroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes rainbow-scroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes rainbow-scroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+@keyframes rainbow-scroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes rainbow-scroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.kawaii-button {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 1px;
+  border: 2px dashed #dda0dd;
+  border-radius: 2px;
+  font-family: 'PC98';
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+  color: #7393B3;
+
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbow-scroll 4s linear infinite;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  box-shadow: 2px 2px 5px #ffc0cb;
+  padding-top: 0px;
+}
+
+.kawaii-button:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 4px 4px 12px #ffb6c1;
+}
+#cboxdiv {
+    position: relative; /* Ensure proper positioning relative to the container */
+    margin: 20px auto; /* Center the CBox with some margin */
+    width: 240px;
+    font-size: 0;
+    line-height: 0;
+    padding-top: 5px; /* Add padding to prevent overlap with any other elements */
+}
+
+/* Style for the iframe container within CBox */
+#cboxdiv iframe {
+    width: 100%; 
+    height: 100%;
+}
+
+#statuscafe {
+    padding: .5em;
+    background-color: #fff0ff;
+    height: 60px;
+    font-size: 10;
+    border: 1px solid midnightblue;
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+}
+
+    </style>
+
+
+
+    <div id="TEMPLATE-LAYOUT">
+        <div class="BOARD">
+          
+        </div>
+
+        <header>
+            
+        </header>
+
+
+        <!-- NEW FLEX WRAPPER WITH LEFT + CENTER + RIGHT -->
+        <div style="display: flex; flex-direction: row; gap: 5px; margin-top: 5px;">
+
+            <div class="left-navigation">
+                <div class="button">BOARDS </div>
+				<div class="button">𐔌՞. .՞𐦯</div>
+              
+
+                
+                <ul><b>
+                   <a href="animanga.html" class="kawaii-button">ANIMANGA</a>
+                  <a href="cosplay.html" class="kawaii-button">COSPLAY</a>
+                  <a href="vidya.html" class="kawaii-button">VIDYA</a>
+                  <a href="misc.html" class="kawaii-button">MISC</a>
+                  
+                </b></ul>
+
+
+
+<style>
+    .fanlisting-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFFFFF;\
+        border-radius: 3px;
+        padding: 0px;
+        width: 89%;       
+        height: 70px;
+        max-width: 800px;
+        margin: 0px auto;
+        box-sizing: border-box;
+        border: 2px dashed #dda0dd;   
+        padding-top: 0px; /* Add padding to prevent overlap with any other elements */
+    }
+
+    .fanlisting-box marquee {
+        font-size: 0;
+    }
+
+    .fanlisting-box a {
+        margin-right: 5px; /* Space between images */
+        text-decoration: none;
+
+    }
+
+    .fanlisting-box img {
+        height: 50px; /* Adjust image size */
+        border-radius: 3px;
+        margin-top: 10px;
+        transition: transform 0.3s ease-in-out;
+        border: 2px solid #dda0dd; /* Matching soft pink border */
+    }
+
+    .fanlisting-box img:hover {
+        transform: scale(1.1); /* Hover effect for images */
+    }
+</style>
+
+<div class="adbox">
+    <div class="adbox-content"><center>
+</center>
+
+        
+    </div>
+</div>
+
+<style>
+    .adbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFFFFF;
+        border-radius: 3px;
+        padding: 5px;
+        width: 89%;
+        height: 150px;
+        max-width: 800px;
+        margin: 10px auto;
+        box-sizing: border-box;
+        border: 2px dashed #dda0dd;
+        padding-top: 15px;
+        overflow: hidden;
+    }
+
+    .adbox-content {
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .adbox a {
+        margin-bottom: 5px;
+        text-decoration: none;
+    }
+
+    .adbox img {
+        height: auto;
+        border-radius: 3px;
+        transition: transform 0.3s ease-in-out;
+        border: 2px solid #F5B0CB;
+    }
+
+    .adbox img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Animation for seamless scrolling */
+    @keyframes scroll-up {
+        0% {
+            transform: translateY(0); /* Start from the top */
+        }
+        100% {
+            transform: translateY(-50%); /* Scroll until the last image is gone, then loop back */
+        }
+    }
+    
+</style>
+
+
+
+
+                
+
+                
+            </div>
+            <div class="the-section">
+                <div class="content">
+                    <div class="container">
+                        <p></p><center>
+                                 <p><text style="text-decoration: underline wavy pink;"> <img src="https://64.media.tumblr.com/8a8c954f3a004ecc1a055e63ea6b1d35/fb444710eb0ab73e-58/s75x75_c1/3518d42cf174e2b37f2be8139477cd2826ddb416.gifv">
+ <b>VIDYA</b> </text><img src="https://64.media.tumblr.com/244cc609afedd4a43a0d4e2cdeb5d7eb/fb444710eb0ab73e-fa/s75x75_c1/7c3e4a35a4ee9b6f6976e16be95dbd69af1b96fa.gifv"></p>             
+        
+    <p> For discussions of video games </p>
+        
+    </center>
+                              </div>
+             </div>
+ 
+                
+
+            
+                <!-- Virtual Pet Embed (goes under the boxes) -->
+<div style="width: 100%; margin-top: 3px; display: flex; justify-content: center; border-style: ridge; border-color: #dda0dd;">
+         
+
+                                <center>
+
+								</center>
+
+                        
+
+            </div>
+            </div>
+
+            <div class="navigation">
+                      
+                <center>
+                			<center><img src="https://media.tenor.com/vVUtAnEe8SoAAAAM/touhou-touhou-project.gif" height=100px, width= 100px></center>
+
+			          </center>
+                    <div>
+                    <div class="calendar-box">
+    <!-- Clock Display -->
+    <div id="MyClockDisplay" class="clock" onload="showTime()" style="font-size: 16px; letter-spacing: 2px; text-align: center; background-color: #ffddf6; border-radius: 2px; width: auto; height: 40px; display: flex; justify-content: center; align-items: center;">05:17:44 PM</div>
+    
+    <script type="text/javascript">
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            var session = "AM";
+            
+            if (h == 0) {
+                h = 12;
+            }
+            
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+            
+            var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+            
+            setTimeout(showTime, 1000);
+        }
+        
+        showTime();
+    </script>
+    
+</div>
+</div>
+<center></center>
+</div>
+</div>
+
+ 
+
+        <center>
+        <p> </p>
+          
+
+        </center>
+        
+    </div>
+  
+
+   
+
+<meta charset="utf-8">
+<style type="text/css">* {cursor: url(https://i.imgur.com/ywLgtsX.gif), auto !important;}</style>
+<style type="text/css">a:hover {cursor: url(https://i.imgur.com/V0kF1Ce.gif), auto !important;}</style>
+<style type="text/css">label:hover {cursor: url(https://i.imgur.com/V0kF1Ce.gif), auto !important;}</style>
+     
+
+</body>
